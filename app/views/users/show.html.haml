@@ -1,0 +1,29 @@
+%h1 Users#show
+.payoption__rightbox__creditlist
+  .credit
+    - if @exist_user_card == true
+      - @customer_cards.each do |card|
+        .credit__text
+          %p カードID
+          = card.id
+        .credit__card_info
+          %p カードブランド
+          = card.brand
+          %p カード番号の下4桁
+          = card.last4
+        .credit__limit_month
+          %p 有効期限（月）
+          = card.exp_month
+        .credit__limit_year
+          %p 有効期限（年）
+          = card.exp_year
+        .destroy_link
+          = link_to card_destroy_users_path(params: card), method: :delete do
+            %p 削除
+        .separate_line
+          %p ---------------------------------------------
+    - else
+      %p カード情報が登録されていません
+
+= form_tag(action: :card_registrate, method: :post) do
+  %script.payjp-button{"data-key" => "#{PAYJP_PUBLIC_KEY}", "data-text" => "カード番号の登録", :src => "https://checkout.pay.jp", :type => "text/javascript"}

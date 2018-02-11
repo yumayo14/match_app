@@ -16,4 +16,7 @@
 /node_modules
 /yarn-error.log
 
+config/initializers/payjp_setting.rb
+config/secrets.yml
+
 .byebug_history
