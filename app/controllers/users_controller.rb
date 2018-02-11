@@ -1,18 +1,20 @@
-require 'payjp'
-
 class UsersController < ApplicationController
 
   before_action :authenticate_user!
+
+  require 'payjp'
+  Payjp.api_key = PAYJP_SECRET_KEY
+
   def index
   end
 
   def show
-
-    Payjp.api_key = PAYJP_SECRET_KEY
-    customer = Payjp::Customer.retrieve(id: current_user.id.to_s)
-    @customer_cards = customer.cards.data
-   end
-
+    @exist_user_card == cardcheck
+    if @exist_user_card == true
+      customer = Payjp::Customer.retrieve(id: current_user.id.to_s)
+      @customer_cards = customer.cards.data
+    end
+  end
 
   def edit
   end
@@ -30,8 +32,9 @@ class UsersController < ApplicationController
   end
 
   def card_registrate
-    Payjp.api_key = PAYJP_SECRET_KEY
-    if (customer = Payjp::Customer.retrieve(id: current_user.id.to_s))
+
+    @exist_user_card == cardcheck
+    if @exist_user_card == true
       customer.card =  params['payjp-token']
       customer.save
     else
@@ -44,7 +47,6 @@ class UsersController < ApplicationController
   end
 
   def card_destroy
-    Payjp.api_key = PAYJP_SECRET_KEY
     customer = Payjp::Customer.retrieve(params[:customer])
     customer_card = customer.cards.retrieve(params[:id])
     customer_card.delete
