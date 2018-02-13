@@ -1,0 +1,2 @@
+PAYJP_PUBLIC_KEY = 'pk_test_87d46124e47d9ec1fc475129'
+PAYJP_SECRET_KEY = 'sk_test_5b4bcd02bafe0483e666c7a2'
