@@ -31,6 +31,12 @@ class UsersController < ApplicationController
   def destroy
   end
 
+  def owner_info
+  end
+
+  def service_info
+  end
+
   def card_registrate
 
     @exist_user_card == cardcheck

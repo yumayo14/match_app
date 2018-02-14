@@ -1,0 +1,7 @@
+%h1 仮置きルートページ
+= link_to user_path(current_user.id) do
+  %p マイページへのリンク
+= link_to owner_info_users_path do
+  %p 運営会社の情報
+= link_to service_info_users_path do
+  %p 運営会社の情報
