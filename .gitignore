@@ -20,3 +20,4 @@ config/initializers/payjp_setting.rb
 config/secrets.yml
 
 .byebug_history
+.env
