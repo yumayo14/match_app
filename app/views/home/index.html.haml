@@ -1,35 +1,56 @@
-%h1 Match
-%ul
-  %li メニュー
-  %li 利用規約
-  %li お問い合わせ
-  %li ガイドライン
-  %li 運営
-%hr/
-%h1 運命的な出会いを
-%hr/
-.start
-  - if user_signed_in?
-    %div
-      = link_to "Facebookでログインする", user_facebook_omniauth_authorize_path, class: "post"
-  - else
-    %div
-      = link_to "新規登録", new_user_registration_path, class: 'post'
-%hr/
-%h2 料金システム
-%p 仲介料としてひとり1000円
-%hr/
-%h2 Matchとは
-%p 人と人がもっと流動的に出会うことで結婚やビジネス、学生生活を豊かにしていただくためのサービスです
-%hr/
-%h2 ご利用方法
-%ul
-  %li 登録
-  %li ログイン
-  %li 予約
-  %li 合コン
-%hr/
-%h3 運営
-%p hogehoge1
-%p hogehoge2
-%p hogehoge3
+%h1 Compall
+.picture_box
+
+.guide_box
+  .basic_info
+    %h2 ー コンパルとは？ ー
+    %ul.flow_chart
+      %li.flow_chart__first
+        %span 日時、駅を選ぶ
+      %li.flow_chart__secand
+        %span マッチ後、相手幹事とチャット
+      %li.flow_chart__third
+        %span 駅で初めて顔合わせ
+      %li.flow_chart__forth
+        %span コンパる！！
+  .money
+    %h2 ー 基本料金 ー
+    .money_basic_info
+      %span 男女ともに、マッチ成立後は１人あたり１０００円
+    .money_detail_info
+      %p 男女共にそれぞれの
+      %p 幹事に建てかえて頂きます
+  .start
+    - if user_signed_in?
+      = link_to "コンパルを始める", user_facebook_omniauth_authorize_path, class: "post"
+    - else
+      = link_to "Facebookアカウントで新規登録", new_user_registration_path, class: 'post'
+
+  .compal_info
+    %h2  コンパルとは
+    %span 文字
+    .add
+      %span コンパルを広める仲間を募集中
+
+  .situation
+    %h2 ー ご利用シーン ー
+    %ul.situation
+      %li.situation_image
+        %span 画像
+        %span 合コンはしたいけれど、相手が集まらない時に
+      %li.situation_image
+        %span 画像
+        %span 突然の２次会に！
+      %li.situation_image
+        %span 画像
+        %span 朝まで飲みたい時に！
+  .link
+    %ul
+      %li
+        = link_to '運営会社', page_path('about')
+      %li
+        = link_to '利用規約', page_path('service_use')
+      %li
+        = link_to 'プライバシーポリシー', page_path('privacy')
+      %li
+        = link_to 'お問い合わせ', page_path('help')
