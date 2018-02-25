@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root "home#index"
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks'}
 
@@ -11,4 +10,9 @@ Rails.application.routes.draw do
       delete 'card_destroy'
     end
   end
+
+  get 'callback/callback'
+  post 'callback/callback'
+
+  root "home#index"
 end
