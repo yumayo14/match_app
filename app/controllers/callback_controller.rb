@@ -1,6 +1,6 @@
 class CallbackController < ApplicationController
   protect_from_forgery :except => [:callback]
-  
+
   def callback
     token = ENV["TOKEN"]
     message = params["entry"][0]["messaging"][0]
@@ -26,13 +26,14 @@ class CallbackController < ApplicationController
       RestClient.post(endpoint_uri, request_message, {
         'Content-Type' => 'application/json; charset=UTF-8'
       }){ |response, request, result, &block|
-        # p response
-        # p request
-        # p result
+        p response
+        p request
+        p result
       }
     else
       button_structured_message_request_body(sender, "いつの天気？", *weather_buttons)
       #botの発言
+      text
     end
   end
 end
