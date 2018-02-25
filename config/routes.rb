@@ -6,8 +6,16 @@ Rails.application.routes.draw do
     collection do
       get 'owner_info'
       get 'service_info'
+      get 'how_to_use'
+      get 'price'
+      get 'question'
       post 'card_registrate'
       delete 'card_destroy'
+    end
+
+    member do
+      get 'mypage'
+      get 'profile'
     end
   end
 

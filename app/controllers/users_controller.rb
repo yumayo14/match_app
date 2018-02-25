@@ -37,6 +37,21 @@ class UsersController < ApplicationController
   def service_info
   end
 
+  def how_to_use
+  end
+
+  def question
+  end
+
+  def price
+  end
+
+  def mypage
+  end
+
+  def profile
+  end
+
   def card_registrate
 
     @exist_user_card == cardcheck
