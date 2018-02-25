@@ -69,3 +69,4 @@ gem 'haml-rails'
 gem 'high_voltage'
 gem 'bootstrap-sass',  '~> 3.3.7 '
 gem 'jquery-rails'
+gem 'dotenv-rails', groups: [:development, :test]
