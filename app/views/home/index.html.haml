@@ -1,56 +1,60 @@
-%h1 Compall
-.picture_box
+.container-fluid
+  %h1 Compall
+.container-fluid.mt-1
 
-.guide_box
-  .basic_info
-    %h2 ー コンパルとは？ ー
-    %ul.flow_chart
-      %li.flow_chart__first
-        %span 日時、駅を選ぶ
-      %li.flow_chart__secand
-        %span マッチ後、相手幹事とチャット
-      %li.flow_chart__third
-        %span 駅で初めて顔合わせ
-      %li.flow_chart__forth
-        %span コンパる！！
-  .money
-    %h2 ー 基本料金 ー
-    .money_basic_info
-      %span 男女ともに、マッチ成立後は１人あたり１０００円
-    .money_detail_info
-      %p 男女共にそれぞれの
-      %p 幹事に建てかえて頂きます
-  .start
-    - if user_signed_in?
-      = link_to "コンパルを始める", user_facebook_omniauth_authorize_path, class: "post"
-    - else
-      = link_to "Facebookアカウントで新規登録", new_user_registration_path, class: 'post'
+  .picture_box.container
+    = image_tag ("top_picture.jpg")
+  .guide
+    .title_box
+      %h2.text-center ー コンパルとは？ ー
+      %ul.flow_chart.content_box
+        %li.flow_chart__first
+          %span 日時、駅を選ぶ
+        %li.flow_chart__secand
+          %span マッチ後、相手幹事とチャット
+        %li.flow_chart__third
+          %span 駅で初めて顔合わせ
+        %li.flow_chart__forth
+          %span コンパる！！
+    .money
+      .title_box
+        %h2.text-center ー 基本料金 ー
+        .money_basic_box.content_box.text-center
+          .money_basic_info
+            %h3 男女ともに、マッチ成立後は１人あたり１０００円
+          .money_detail_info
+            %h4 （※男女共にそれぞれの幹事に建てかえて頂きます）
+    .start
+      .button
+        - if user_signed_in?
+          = link_to "コンパルを始める", user_facebook_omniauth_authorize_path, class: "btn btn-danger btn-lg border"
+        - else
+          = link_to "Facebookアカウントで新規登録", new_user_registration_path, class: 'btn btn-danger btn-lg border'
+      .compal_info
+        %p  コンパルとは、、、、
+        .add
+          %span コンパルを広める仲間を募集中
 
-  .compal_info
-    %h2  コンパルとは
-    %span 文字
-    .add
-      %span コンパルを広める仲間を募集中
-
-  .situation
-    %h2 ー ご利用シーン ー
-    %ul.situation
-      %li.situation_image
-        %span 画像
-        %span 合コンはしたいけれど、相手が集まらない時に
-      %li.situation_image
-        %span 画像
-        %span 突然の２次会に！
-      %li.situation_image
-        %span 画像
-        %span 朝まで飲みたい時に！
-  .link
-    %ul
-      %li
-        = link_to '運営会社', page_path('about')
-      %li
-        = link_to '利用規約', page_path('service_use')
-      %li
-        = link_to 'プライバシーポリシー', page_path('privacy')
-      %li
-        = link_to 'お問い合わせ', page_path('help')
+    .situation
+      .title_box
+        %h2.text-center ー ご利用シーン ー
+        %ul.situation.content_box
+          %li.situation_image
+            %span 画像
+            %span 合コンはしたいけれど、相手が集まらない時に
+          %li.situation_image
+            %span 画像
+            %span 突然の２次会に！
+          %li.situation_image
+            %span 画像
+            %span 朝まで飲みたい時に！
+    .link
+      %ul.content_box
+        %li
+          = link_to '運営会社', page_path('about')
+        %li
+          = link_to '利用規約', page_path('service_use')
+        %li
+          = link_to 'プライバシーポリシー', page_path('privacy')
+        %li
+          = link_to 'お問い合わせ', page_path('help')
