@@ -66,4 +66,4 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'payjp'
 gem 'haml-rails'
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails', groups: [:development, :test, :production]
