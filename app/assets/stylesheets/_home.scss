@@ -1,3 +1,4 @@
+
 body {
   font-family: "SF Pro JP", "SF Pro Display", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -46,11 +47,9 @@ ul {
   width: 100%;
 }
 .chart{
+  width: 90vw;
   list-style: none;
-  padding: constant(safe-area-inset-left);
-  padding: env(safe-area-inset-left);
   .flow_chart {
-    width: 25vw;
     .circle{
       border: 1px solid red;
       .chart_content {
@@ -60,16 +59,19 @@ ul {
     }
   }
 }
+.with_arrow {
+  width: 25vw;
+}
 .title_box {
   background-color: #DB1150;
   color: white;
 }
 .content_box{
   padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #FDEAF0;
   color: black;
-  padding-bottom: 20px;
-}
+
 
 .cover_box {
   margin-top: 30px;
@@ -79,6 +81,8 @@ ul {
 }
 
 .letter_box {
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: white;
   color: black;
 }
@@ -89,3 +93,4 @@ ul {
     border-radius: 30px;
   }
 }
+
