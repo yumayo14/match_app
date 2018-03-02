@@ -1,23 +1,85 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 body {
   font-family: "SF Pro JP", "SF Pro Display", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+.wrapper {
+  box-sizing: content-box;
+  width: 100%;
+}
+
+.container-fluid {
+  max-width: 100vw;
+  padding: 0;
+}
 
 h1 {
-  font-size: 65px;
+  font-size: 6.5rem;
   color: #DB1150;
   margin-left: 50px;
 }
 
+@media only screen and (min-width: 321px) and (max-width: 768px) {
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 0.8rem;
+  }
+
+}
+
+ul {
+  list-style: none;
+
+}
+
+.picture_width {
+  width: 100%;
+}
+.chart{
+  list-style: none;
+  padding: constant(safe-area-inset-left);
+  padding: env(safe-area-inset-left);
+  .flow_chart {
+    width: 25vw;
+    .circle{
+      border: 1px solid red;
+      .chart_content {
+        max-width: 200px;
+        padding-top: 30px;
+      }
+    }
+  }
+}
 .title_box {
   background-color: #DB1150;
   color: white;
 }
 .content_box{
+  padding-top: 20px;
   background-color: #FDEAF0;
+  color: black;
+  padding-bottom: 20px;
+}
+
+.cover_box {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #FDEAF0;
+  color: black;
+}
+
+.letter_box {
+  background-color: white;
   color: black;
 }
 .button {

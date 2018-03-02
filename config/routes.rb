@@ -15,7 +15,6 @@ Rails.application.routes.draw do
 
     member do
       get 'mypage'
-      get 'profile'
     end
   end
 
