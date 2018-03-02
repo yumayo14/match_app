@@ -70,3 +70,5 @@ gem 'high_voltage'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'bootstrap','~>4.0.0'
+gem 'jquery-rails'

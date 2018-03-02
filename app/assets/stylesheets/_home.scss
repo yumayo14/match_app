@@ -1,6 +1,3 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
   font-family: "SF Pro JP", "SF Pro Display", "SF Pro Icons", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", メイリオ, Meiryo, "ＭＳ Ｐゴシック", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -62,11 +59,9 @@ ul {
     }
   }
 }
-
 .with_arrow {
   width: 25vw;
 }
-
 .title_box {
   background-color: #DB1150;
   color: white;
@@ -76,7 +71,7 @@ ul {
   padding-bottom: 20px;
   background-color: #FDEAF0;
   color: black;
-}
+
 
 .cover_box {
   margin-top: 30px;
@@ -98,3 +93,4 @@ ul {
     border-radius: 30px;
   }
 }
+

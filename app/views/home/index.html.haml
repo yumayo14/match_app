@@ -11,34 +11,33 @@
       .info
         .title_box
           %h2.text-center ー コンパルとは？ ー
-          .content_box
-            .chart.d-flex.mx-auto
-              .flow_chart.with_arrow.d-flex.justify-content-around
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center 日時、駅を選ぶ
-                    %h5.text-center 1st
-                .arrow.my-auto.mx-auto
-                  %i.fa.fa-long-arrow-right
-              .flow_chart.with_arrow.d-flex.justify-content-around
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center マッチ後、相手幹事とチャット
-                    %h5.text-center 2nd
-                .arrow.my-auto.mx-auto
-                  %i.fa.fa-long-arrow-right
-              .flow_chart.with_arrow.d-flex.justify-content-around
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center 駅で初めて顔合わせ
-                    %h5.text-center 3rd
-                .arrow.my-auto.mx-auto
-                  %i.fa.fa-long-arrow-right
-              .flow_chart
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center コンパる！！
-                    %h5.text-center 4th
+          .chart.content_box.d-flex
+            .flow_chart.d-flex.justify-content-around
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center 日時、駅を選ぶ
+                  %h5.text-center 1st
+              .arrow.my-auto.mx-auto
+                %i.fa.fa-long-arrow-right
+            .flow_chart.d-flex.justify-content-around
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center マッチ後、相手幹事とチャット
+                  %h5.text-center 2nd
+              .arrow.my-auto.mx-auto
+                %i.fa.fa-long-arrow-right
+            .flow_chart.d-flex.justify-content-around
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center 駅で初めて顔合わせ
+                  %h5.text-center 3rd
+              .arrow.my-auto.mx-auto
+                %i.fa.fa-long-arrow-right
+            .flow_chart
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center コンパる！！
+                  %h5.text-center 4th
       .money
         .title_box
           %h2.text-center ー 基本料金 ー
@@ -84,3 +83,4 @@
             = link_to 'プライバシーポリシー', page_path('privacy')
           %li
             = link_to 'お問い合わせ', page_path('help')
+
