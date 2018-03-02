@@ -66,7 +66,11 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'payjp'
 gem 'haml-rails'
+<<<<<<< HEAD
 gem 'high_voltage'
 gem 'bootstrap-sass',  '~> 3.3.7 '
 gem 'jquery-rails'
 gem 'dotenv-rails', groups: [:development, :test]
+=======
+gem 'dotenv-rails', groups: [:development, :test, :production]
+>>>>>>> Kosuke-Ito/master
