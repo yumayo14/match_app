@@ -50,9 +50,9 @@
       .start.cover_box
         .button
           - if user_signed_in?
-            = link_to "コンパルを始める", user_facebook_omniauth_authorize_path, class: "btn btn-danger btn-lg border"
+            = link_to "コンパルを始める", user_facebook_omniauth_authorize_path, class: "btn btn-danger btn-lg border mx-auto"
           - else
-            = link_to "Facebookアカウントで新規登録", new_user_registration_path, class: 'btn btn-danger btn-lg border'
+            = link_to "Facebookアカウントで新規登録", new_user_registration_path, class: 'btn btn-danger btn-lg border mx-auto'
         .compal_info.text-center
           %h5.text-center  コンパルとは、、、、
           .add.title_box
@@ -74,13 +74,13 @@
               .picture_box
                 = image_tag "top_picture.jpg", class: "img-fluid rounded-circle"
               %h5 朝まで飲みたい時に！
-      .link
-        %ul.content_box
-          %li
-            = link_to '運営会社', page_path('about')
-          %li
-            = link_to '利用規約', page_path('service_use')
-          %li
-            = link_to 'プライバシーポリシー', page_path('privacy')
-          %li
-            = link_to 'お問い合わせ', page_path('help')
+      .links
+        .btn-group.justify-content-around.btn-toolbar
+          .link
+            = link_to '運営会社', page_path('about'), class: "link_button btn btn-danger border"
+          .link
+            = link_to '利用規約', page_path('service_use'), class: "link_button btn btn-danger my-auto border"
+          .link
+            = link_to 'プライバシーポリシー', page_path('privacy'), class: "link_button btn btn-danger mx-auto border"
+          .link
+            = link_to 'お問い合わせ', page_path('help'), class: "link_button btn btn-danger mx-auto border"

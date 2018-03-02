@@ -94,7 +94,12 @@ ul {
 .button {
   width: 200px;
   margin: 0 auto;
-  .border {
-    border-radius: 30px;
-  }
+}
+
+.border {
+  border-radius: 30px;
+}
+
+.btn-group {
+  width: 100vw;
 }
