@@ -38,9 +38,9 @@ class UsersController < ApplicationController
   end
 
   def card_registrate
-
     @exist_user_card == cardcheck
-    if @exist_user_card == true
+    if @exist_user_card
+      customer = Payjp::Customer.retrieve(id: current_user.id.to_s)
       customer.card =  params['payjp-token']
       customer.save
     else
@@ -60,8 +60,8 @@ class UsersController < ApplicationController
   end
 
   private
-  # def card_params
-  #   params.permit(:number,:cvc, :year, :month, :name)
-  # end
+  def customer_set
+
+  end
 
 end
