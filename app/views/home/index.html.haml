@@ -1,86 +1,380 @@
-.wrapper
-  %header
-    %p.notice= notice
-    %p.alert= alert
-  .container-fluid
-    %h1 Compall
-  .container-fluid.mt-1
-    .picture_box.mx-auto
-      = image_tag "top_picture.jpg", class: "picture_width"
-    .guide
-      .info
-        .title_box
-          %h2.text-center ー コンパルとは？ ー
-          .content_box
-            .chart.d-flex.mx-auto
-              .flow_chart.with_arrow.d-flex.justify-content-around
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center 日時、駅を選ぶ
-                    %h5.text-center 1st
-                .arrow.my-auto.mx-auto
-                  %i.fa.fa-long-arrow-right
-              .flow_chart.with_arrow.d-flex.justify-content-around
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center マッチ後、相手幹事とチャット
-                    %h5.text-center 2nd
-                .arrow.my-auto.mx-auto
-                  %i.fa.fa-long-arrow-right
-              .flow_chart.with_arrow.d-flex.justify-content-around
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center 駅で初めて顔合わせ
-                    %h5.text-center 3rd
-                .arrow.my-auto.mx-auto
-                  %i.fa.fa-long-arrow-right
-              .flow_chart
-                .circle.border-bottom-0.border-danger.rounded-circle
-                  .chart_content
-                    %h4.text-center コンパる！！
-                    %h5.text-center 4th
-      .money
-        .title_box
-          %h2.text-center ー 基本料金 ー
-          .money_basic_box.content_box.text-center
-            .money_basic_info
-              %h3 男女ともに、マッチ成立後は１人あたり１０００円
-            .money_detail_info
-              %h4 （※男女共にそれぞれの幹事に建てかえて頂きます）
-      .start.cover_box
-        .button
-          - if user_signed_in?
-            = link_to "コンパルを始める", user_facebook_omniauth_authorize_path, class: "btn btn-danger btn-lg border mx-auto"
-          - else
-            = link_to "Facebookアカウントで新規登録", new_user_registration_path, class: 'btn btn-danger btn-lg border mx-auto'
-        .compal_info.text-center
-          %h5.text-center  コンパルとは、、、、
-          .add.title_box
-            %h3.text-center コンパルを広める仲間も募集中
-
-      .situation.mt-1
-        .title_box
-          %h2.text-center ー ご利用シーン ー
-          .situation.letter_box.d-flex
-            .situation_image.col-4.text-center
-              .picture_box
-                = image_tag "top_picture.jpg", class: "img-fluid rounded-circle"
-              %h5 合コンはしたいけれど、相手が集まらない時に
-            .situation_image.col-4.text-center
-              .picture_box
-                = image_tag "top_picture.jpg", class: "img-fluid rounded-circle"
-              %h5 突然の２次会に！
-            .situation_image.col-4.text-center
-              .picture_box
-                = image_tag "top_picture.jpg", class: "img-fluid rounded-circle"
-              %h5 朝まで飲みたい時に！
-      .links
-        .btn-group.justify-content-around.btn-toolbar
-          .link
-            = link_to '運営会社', page_path('about'), class: "link_button btn btn-danger border"
-          .link
-            = link_to '利用規約', page_path('service_use'), class: "link_button btn btn-danger my-auto border"
-          .link
-            = link_to 'プライバシーポリシー', page_path('privacy'), class: "link_button btn btn-danger mx-auto border"
-          .link
-            = link_to 'お問い合わせ', page_path('help'), class: "link_button btn btn-danger mx-auto border"
+#fh5co-wrapper
+  #fh5co-page
+    #fh5co-header
+      %header#fh5co-header-section
+        .container
+          .nav-header
+            %a.js-fh5co-nav-toggle.fh5co-nav-toggle{:href => "#"}
+              %i
+            %h1#fh5co-logo
+              %a{:href => "index.html"} Energy
+    -#
+    %aside#fh5co-hero.js-fullheight
+      .flexslider.js-fullheight
+        %ul.slides
+          %li{:style => "background-image: url(#{asset_path 'top_picture.jpg'});"}
+            .overlay-gradient
+            .container
+              .col-md-10.col-md-offset-1.text-center.js-fullheight.slider-text
+                .slider-text-inner
+                  %h2 Create A Motivational Template
+                  %p
+                    %a.btn.btn-primary.btn-lg{:href => "#"} Get started
+    #fh5co-section
+      -# .col-half.col-half-color
+      -#   .row-half
+      -#     .col-half-inner.col-half-inner-bg
+      -#       .desc
+      -#         %h3 About Us
+      -#         %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+      -#         %p
+      -#           %a.btn.btn-primary.btn-outline.with-arrow{:href => "#"}
+      -#             Read More
+      -#             %i.icon-arrow-right22
+      -#     %a.col-half-inner.grid-item{:href => "#", :style => "background-image: url(images/project-1.jpg);"}
+      -#       .desc2
+      -#         %h3 Bag
+      -#         %span Travel
+      -#   .row-half
+      -#     %a.col-half-inner.grid-item{:href => "#", :style => "background-image: url(images/project-2.jpg);"}
+      -#       .desc2
+      -#         %h3 Shoes
+      -#         %span Travel
+      -#     .col-half-inner.col-half-inner-bg2
+      -#       .desc
+      -#         %h3
+      -#           Client Says
+      -#           %i.icon-quotes-right
+      -#         %blockquote
+      -#           %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+      -#           %span
+      -#             %a.client{:href => "#"} — John Doe
+      -# .col-half.col-half-2
+      -#   %h2 Energy Features
+      -#   .featured-inner
+      -#     %i.sl-icon-chart
+      -#     .desc
+      -#       %h3 WordPress Theme
+      -#       %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+      -#   .featured-inner
+      -#     %i.sl-icon-screen-tablet
+      -#     .desc
+      -#       %h3 Responsive Layout
+      -#       %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+      -#   .featured-inner
+      -#     %i.sl-icon-layers
+      -#     .desc
+      -#       %h3 Layered PSD Template
+      -#       %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+    #fh5co-services-section
+      .container
+        .row
+          .col-md-6.col-md-offset-3.text-center.fh5co-heading
+            -# %i.sl-icon-paper-plane
+            %h2 コンパルとは
+            %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+        .row
+          .col-md-3.text-center
+            .services
+              -# %span
+              -#   %i.sl-icon-graph
+              %h3 1st
+              %p 日時、駅を選ぶ
+          .col-md-3.text-center
+            .services
+              -# %span
+              -#   %i.sl-icon-camera
+              %h3 2nd
+              %p マッチ後、相手幹事とチャット
+          .col-md-3.text-center
+            .services
+              -# %span
+              -#   %i.sl-icon-support
+              %h3 3rd
+              %p 駅で初めて顔合わせ
+          .col-md-3.text-center
+            .services
+              -# %span
+              -#   %i.sl-icon-support
+              %h3 4th
+              %p コンパる！！
+          /
+            <div class="col-md-4 text-center">
+            <div class="services">
+            <span><i class="sl-icon-lock"></i></span>
+            <h3>Security</h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            </div>
+            </div>
+            <div class="col-md-4 text-center">
+            <div class="services">
+            <span><i class="sl-icon-key"></i></span>
+            <h3>Key Activator</h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            </div>
+            </div>
+            <div class="col-md-4 text-center">
+            <div class="services">
+            <span><i class="sl-icon-chart"></i></span>
+            <h3>Web Development</h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            </div>
+            </div>
+    #fh5co-portfolio-section
+      .portfolio-grid-item-color
+        .desc.col-md-6.col-md-offset-3.text-center.fh5co-heading
+          %h2 ご利用シーン
+          %p Far far away, behind the word mountains, far from the countries
+          %p
+            %a.btn.btn-primary.btn-outline.with-arrow{:href => "#"}
+              View All Projects
+              %i.icon-arrow-right22
+      .portfolio-row-half
+        %a.portfolio-grid-item{:href => "#", :style => "background-image: url(#{asset_path 'top_picture.jpg'});"}
+          .desc2
+            %h3 合コンはしたいけれど、相手が集まらない時に
+            %span Case 1
+            %i.sl-icon-heart
+        %a.portfolio-grid-item{:href => "#", :style => "background-image: url(#{asset_path 'top_picture.jpg'});"}
+          .desc2
+            %h3 突然の２次会に！
+            %span Case 2
+            %i.sl-icon-heart
+        %a.portfolio-grid-item{:href => "#", :style => "background-image: url(#{asset_path 'top_picture.jpg'});"}
+          .desc2
+            %h3 朝まで飲みたい時に！
+            %span Case 3
+            %i.sl-icon-heart
+        -# %a.portfolio-grid-item{:href => "#", :style => "background-image: url(images/project-5.jpg);"}
+        -#   .desc2
+        -#     %h3 Shoes
+        -#     %span Travel
+        -#     %i.sl-icon-heart
+        -# %a.portfolio-grid-item{:href => "#", :style => "background-image: url(images/project-6.jpg);"}
+        -#   .desc2
+        -#     %h3 Shoes
+        -#     %span Travel
+        -#     %i.sl-icon-heart
+        -# %a.portfolio-grid-item{:href => "#", :style => "background-image: url(images/project-1.jpg);"}
+        -#   .desc2
+        -#     %h3 Shoes
+        -#     %span Travel
+        -#     %i.sl-icon-heart
+        -# %a.portfolio-grid-item{:href => "#", :style => "background-image: url(images/project-2.jpg);"}
+        -#   .desc2
+        -#     %h3 Shoes
+        -#     %span Travel
+        -#     %i.sl-icon-heart
+    #fh5co-pricing-section
+      .container
+        .row
+          .col-md-6.col-md-offset-3.text-center.fh5co-heading
+            -# %i.sl-icon-wallet
+            %h2 基本料金
+            %p 男女ともに、マッチ成立後は１人あたり１０００円
+            %p （※男女共にそれぞれの幹事に建てかえて頂きます）
+        -# .row
+        -#   .col-md-3.col-sm-6
+        -#     .price-box.to-animate
+        -#       %h2.pricing-plan Starter
+        -#       .price
+        -#         %sup.currency> $
+        -#         7
+        -#         %small /mo
+        -#       %p Basic customer support for small business
+        -#       %hr/
+        -#       %ul.pricing-info
+        -#         %li 10 projects
+        -#         %li 20 Pages
+        -#         %li 20 Emails
+        -#         %li 100 Images
+        -#       %p
+        -#         %a.btn.btn-primary{:href => "#"} Read More
+        -#   .col-md-3.col-sm-6
+        -#     .price-box.to-animate
+        -#       %h2.pricing-plan Regular
+        -#       .price
+        -#         %sup.currency> $
+        -#         19
+        -#         %small /mo
+        -#       %p Basic customer support for small business
+        -#       %hr/
+        -#       %ul.pricing-info
+        -#         %li 15 projects
+        -#         %li 40 Pages
+        -#         %li 40 Emails
+        -#         %li 200 Images
+        -#       %p
+        -#         %a.btn.btn-primary{:href => "#"} Read More
+        -#   .clearfix.visible-sm-block
+        -#   .col-md-3.col-sm-6.to-animate
+        -#     .price-box.popular
+        -#       .popular-text Best value
+        -#       %h2.pricing-plan Plus
+        -#       .price
+        -#         %sup.currency> $
+        -#         79
+        -#         %small /mo
+        -#       %p Basic customer support for small business
+        -#       %hr/
+        -#       %ul.pricing-info
+        -#         %li Unlimitted projects
+        -#         %li 100 Pages
+        -#         %li 100 Emails
+        -#         %li 700 Images
+        -#       %p
+        -#         %a.btn.btn-primary{:href => "#"} Read More
+        -#   .col-md-3.col-sm-6
+        -#     .price-box.to-animate
+        -#       %h2.pricing-plan Enterprise
+        -#       .price
+        -#         %sup.currency> $
+        -#         125
+        -#         %small /mo
+        -#       %p Basic customer support for small business
+        -#       %hr/
+        -#       %ul.pricing-info
+        -#         %li Unlimitted projects
+        -#         %li Unlimitted Pages
+        -#         %li Unlimitted Emails
+        -#         %li Unlimitted Images
+        -#       %p
+        -#         %a.btn.btn-primary{:href => "#"} Read More
+    -# .fh5co-parallax.fh5co-parallax2{"data-stellar-background-ratio" => "0.5", :style => "background-image: url(images/hero.jpg);"}
+    -#   .overlay
+    -#   .container
+    -#     .row
+    -#       .col-md-12.col-md-offset-0.col-sm-12.col-sm-offset-0.col-xs-12.col-xs-offset-0.text-center.fh5co-table
+    -#         .fh5co-intro.animate-box
+    -#           .row
+    -#             .col-md-6.text-center
+    -#               .testimony
+    -#                 %span.quote
+    -#                   %i.icon-quotes-right
+    -#                 %blockquote
+    -#                   %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+    -#                   %span
+    -#                     Athan Smith, via
+    -#                     %a.icon-twitter3.twitter-color{:href => "#"}
+    -#             .col-md-6.text-center
+    -#               .testimony
+    -#                 %span.quote
+    -#                   %i.icon-quotes-right
+    -#                 %blockquote
+    -#                   %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+    -#                   %span
+    -#                     Athan Smith, via
+    -#                     %a.icon-google-plus.googleplus-color{:href => "#"}
+    -# #fh5co-blog-section.grey-bg
+    -#   .container
+    -#     .row
+    -#       .col-md-6.col-md-offset-3.text-center.fh5co-heading
+    -#         %i.sl-icon-note
+    -#         %h2 Recent Blog
+    -#         %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+    -#     .row
+    -#       .feature-full-1col
+    -#         .image{:style => "background-image: url(images/project-1.jpg);"}
+    -#         .desc
+    -#           %h3 New iPhone 7
+    -#           %p Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed. Vivamus augue enim, consectetur ac interdum a, pulvinar ac massa. Nullam malesuada congue
+    -#           %p
+    -#             %a.btn.btn-primary.btn-luxe-primary{:href => "#"} Learn More
+    -#       .feature-full-2col
+    -#         .blog-inner
+    -#           .image{:style => "background-image: url(images/project-2.jpg);"}
+    -#           .desc
+    -#             %h3 New iPhone 7
+    -#             %p
+    -#               Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo,
+    -#               in suscipit urna condimentum sed.
+    -#             %p
+    -#               %a.btn.btn-primary.btn-luxe-primary{:href => "#"} Learn More
+    -#         .blog-inner
+    -#           .image{:style => "background-image: url(images/project-3.jpg);"}
+    -#           .desc
+    -#             %h3 Games Apps 2016
+    -#             %p Pellentesque habitant morbi tristique senectus et netus ett mauada fames ac turpis egestas. Etiam euismod tempor leo, in suscipit urna condimentum sed.
+    -#             %p
+    -#               %a.btn.btn-primary.btn-luxe-primary{:href => "#"} Learn More
+    #fh5co-add-section
+      .fh5co-parallax
+        .overlay
+        .container
+          .row
+            .col-md-12.col-md-offset-0.col-sm-12.col-sm-offset-0.col-xs-12.col-xs-offset-0.text-center.fh5co-table
+              .fh5co-intro.fh5co-table-cell.animate-box
+                %h1.text-center コンパルを広める仲間も募集中 !
+                %p
+                  Made with love by the fine folks at
+                  %a{:href => "http://freehtml5.co"} FreeHTML5.co
+                %p
+                  %a.btn.btn-primary.btn-lg{:href => "#"} Get started
+    -# #fh5co-counter-section.fh5co-counters
+    -#   .container
+    -#     .row
+    -#       .col-md-6.col-md-offset-3.text-center.fh5co-heading
+    -#         %i.sl-icon-badge
+    -#         %h2 Achievements
+    -#         %p Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.
+    -#     .row
+    -#       .col-md-3.text-center
+    -#         %span.fh5co-counter.js-counter{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "1356"}
+    -#         %span.fh5co-counter-label Cups of Coffee
+    -#       .col-md-3.text-center
+    -#         %span.fh5co-counter.js-counter{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "7290"}
+    -#         %span.fh5co-counter-label Client
+    -#       .col-md-3.text-center
+    -#         %span.fh5co-counter.js-counter{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "4370"}
+    -#         %span.fh5co-counter-label Projects
+    -#       .col-md-3.text-center
+    -#         %span.fh5co-counter.js-counter{"data-from" => "0", "data-refresh-interval" => "50", "data-speed" => "5000", "data-to" => "4000"}
+    -#         %span.fh5co-counter-label Finished Projects
+    %footer#footer
+      .container
+        .row
+          .col-md-4
+            .copyright
+              %p
+                %small
+                  © 2016 Free HTML5
+                  = succeed "." do
+                    %a{:href => "index.html"} Energy
+                  %br/
+                  Made with
+                  %i.icon-heart3
+                  by
+                  %a{:href => "http://freehtml5.co/", :target => "_blank"} Freehtml5.co
+                  \/ Demo Images:
+                  %a{:href => "https://unsplash.com/", :target => "_blank"} Unsplash
+          .col-md-6
+            .row
+              .col-md-4
+                %h3 Company
+                %ul.link
+                  %li
+                    %a{:href => "#"} About Us
+                  %li
+                    %a{:href => "#"} Energy
+                  %li
+                    %a{:href => "#"} Customer Care
+                  %li
+                    %a{:href => "#"} Contact Us
+              .col-md-6
+                %h3 Subscribe
+                %p Far far away, behind the word mountains, far from the countries
+                -# %form#form-subscribe{:action => "#"}
+                -#   .form-field
+                -#     %input#email{:placeholder => "Email Address", :type => "email"}/
+                -#     %input#submit{:type => "submit", :value => "Send"}/
+          .col-md-2
+            %ul.social-icons
+              %li
+                %a{:href => "#"}
+                  %i.icon-twitter-with-circle
+                %a{:href => "#"}
+                  %i.icon-facebook-with-circle
+                %a{:href => "#"}
+                  %i.icon-instagram-with-circle
+                %a{:href => "#"}
+                  %i.icon-linkedin-with-circle

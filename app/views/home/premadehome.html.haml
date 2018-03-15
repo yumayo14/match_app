@@ -1,0 +1,85 @@
+%header
+  %p.notice= notice
+  %p.alert= alert
+.container-fluid
+  %h1 Compall
+.container-fluid
+  .picture_box.mx-auto
+    = image_tag "top_picture.jpg", class: "picture_width"
+  .guide
+    .info
+      .title_box
+        %h2.text-center ー コンパルとは？ ー
+        .content_box
+          .chart.d-flex.mx-auto
+            .flow_chart.with_arrow.d-flex.justify-content-around
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center 日時、駅を選ぶ
+                  %h5.text-center 1st
+              .arrow.my-auto.mx-auto
+                %i.fa.fa-long-arrow-right
+            .flow_chart.with_arrow.d-flex.justify-content-around
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center マッチ後、相手幹事とチャット
+                  %h5.text-center 2nd
+              .arrow.my-auto.mx-auto
+                %i.fa.fa-long-arrow-right
+            .flow_chart.with_arrow.d-flex.justify-content-around
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center 駅で初めて顔合わせ
+                  %h5.text-center 3rd
+              .arrow.my-auto.mx-auto
+                %i.fa.fa-long-arrow-right
+            .flow_chart
+              .circle.border-bottom-0.border-danger.rounded-circle
+                .chart_content
+                  %h4.text-center コンパる！！
+                  %h5.text-center 4th
+    .money
+      .title_box
+        %h2.text-center ー 基本料金 ー
+        .money_basic_box.content_box.text-center
+          .money_basic_info
+            %h3 男女ともに、マッチ成立後は１人あたり１０００円
+          .money_detail_info
+            %h4 （※男女共にそれぞれの幹事に建てかえて頂きます）
+    .start.cover_box
+      .button
+        - if user_signed_in?
+          = link_to "コンパルを始める", user_facebook_omniauth_authorize_path, class: "btn btn-danger btn-lg border mx-auto"
+        - else
+          = link_to "Facebookアカウントで新規登録", new_user_registration_path, class: 'btn btn-danger btn-lg border mx-auto'
+      .compal_info.text-center
+        %h5.text-center  コンパルとは、、、、
+        .add.title_box
+          %h3.text-center コンパルを広める仲間も募集中
+
+    .situation.mt-1
+      .title_box
+        %h2.text-center ー ご利用シーン ー
+        .situation.letter_box.d-flex
+          .situation_image.col-4.text-center
+            .picture_box
+              = image_tag "top_picture.jpg", class: "img-fluid rounded-circle"
+            %h5 合コンはしたいけれど、相手が集まらない時に
+          .situation_image.col-4.text-center
+            .picture_box
+              = image_tag "top_picture.jpg", class: "img-fluid rounded-circle"
+            %h5 突然の２次会に！
+          .situation_image.col-4.text-center
+            .picture_box
+              = image_tag "top_picture.jpg", class: "img-fluid rounded-circle"
+            %h5 朝まで飲みたい時に！
+    %footer.links
+      .btn-group.justify-content-around.btn-toolbar
+        .link
+          = link_to '運営会社', page_path('about'), class: "link_button btn btn-danger border"
+        .link
+          = link_to '利用規約', page_path('service_use'), class: "link_button btn btn-danger my-auto border"
+        .link
+          = link_to 'プライバシーポリシー', page_path('privacy'), class: "link_button btn btn-danger mx-auto border"
+        .link
+          = link_to 'お問い合わせ', page_path('help'), class: "link_button btn btn-danger mx-auto border"

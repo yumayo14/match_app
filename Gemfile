@@ -67,6 +67,6 @@ gem 'omniauth-facebook'
 gem 'payjp'
 gem 'haml-rails'
 gem 'high_voltage'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.5'
 gem 'jquery-rails'
 gem 'dotenv-rails', groups: [:development, :test, :production]
